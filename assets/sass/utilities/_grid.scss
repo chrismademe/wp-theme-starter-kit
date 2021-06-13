@@ -1,0 +1,63 @@
+$grid-columns: 12 !default;
+$grid-rows: auto !default;
+
+.grid {
+	display: grid;
+	gap: var(--gap);
+}
+
+@for $i from 1 through $grid-columns {
+	.cols-#{$i} {
+		grid-template-columns: repeat(#{$i}, 1fr);
+	}
+
+	.col-start-#{$i} {
+		grid-column-start: #{$i};
+	}
+
+	.col-span-#{$i} {
+		grid-column-end: span #{$i};
+	}
+
+	.rows-#{$i} {
+		grid-template-rows: repeat(#{$i}, 1fr);
+	}
+
+	.row-start-#{$i} {
+		grid-row-start: #{$i};
+	}
+
+	.row-span-#{$i} {
+		grid-row-end: span #{$i};
+	}
+}
+
+@each $breakpoint, $value in token('breakpoints') {
+	@media (min-width: $value) {
+		@for $i from 1 through $grid-columns {
+			.#{$breakpoint}\:cols-#{$i} {
+				grid-template-columns: repeat(#{$i}, 1fr);
+			}
+
+			.#{$breakpoint}\:col-start-#{$i} {
+				grid-column-start: #{$i};
+			}
+
+			.#{$breakpoint}\:col-span-#{$i} {
+				grid-column-end: span #{$i};
+			}
+
+			.#{$breakpoint}\:rows-#{$i} {
+				grid-template-rows: repeat(#{$i}, 1fr);
+			}
+
+			.#{$breakpoint}\:row-start-#{$i} {
+				grid-row-start: #{$i};
+			}
+
+			.#{$breakpoint}\:row-span-#{$i} {
+				grid-row-end: span #{$i};
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+/* Form Styles */
+label {
+	display: block;
+	font-size: inherit;
+	font-weight: var(--weight-bold, 700);
+	line-height: var(--leading-none, 1);
+}
+
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+input[type='email'],
+input[type='number'],
+input[type='datetime-local'],
+input[type='date'],
+select,
+textarea {
+	appearance: none;
+	background-color: white;
+	border: 0.06rem solid var(--color-gray-30, #ddd);
+	border-radius: var(--radius-base, 4px);
+	color: var(--color-primary, #111);
+	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	padding: var(--space-2, 8px) var(--space-3, 12px);
+	width: 100%;
+}
+
+input[type='text'][data-state='invalid'],
+input[type='password'][data-state='invalid'],
+input[type='tel'][data-state='invalid'],
+input[type='email'][data-state='invalid'],
+input[type='number'][data-state='invalid'],
+input[type='datetime-local'][data-state='invalid'],
+input[type='date'][data-state='invalid'],
+select[data-state='invalid'],
+textarea[data-state='invalid'] {
+	border-color: var(--color-negative, red);
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='datetime-local']:focus,
+input[type='date']:focus,
+select:focus,
+textarea:focus {
+	border-color: var(--color-neutral, blue);
+	box-shadow: 0 0 0 4px var(--color-neutral-light, #eee);
+	outline: 0;
+}

@@ -1,0 +1,67 @@
+// Map WordPress utility sizes to our size scale
+$sizeMap: (
+	'sm': 'small',
+	'base': 'normal',
+	'xl': 'medium',
+	'2xl': 'large',
+	'4xl': 'huge'
+);
+
+/* Font family */
+@each $token, $value in token('font') {
+	.font-#{$token} {
+		font-family: #{$value};
+	}
+}
+
+/* Font size */
+@each $token, $value in token('size') {
+	.size-#{$token} {
+		font-size: #{$value};
+	}
+
+	@if (map-has-key($sizeMap, $token)) {
+		.has-#{map-get($sizeMap, $token)}-font-size {
+			font-size: #{$value};
+		}
+	}
+}
+
+/* Weight */
+@each $token, $value in token('weight') {
+	.weight-#{$token} {
+		font-weight: #{$value};
+	}
+}
+
+/* Leading / Line Height */
+@each $token, $value in token('leading') {
+	.leading-#{$token} {
+		line-height: #{$value};
+	}
+}
+
+/* Tracking / Letter Spacing */
+@each $token, $value in token('tracking') {
+	.tracking-#{$token} {
+		letter-spacing: #{$value};
+	}
+}
+
+/* Text Alignment */
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+/* Text Style */
+.uppercase {
+	text-transform: uppercase;
+}

@@ -1,0 +1,41 @@
+body {
+	background-size: cover !important;
+	background-position: center !important;
+	background-image: linear-gradient(to bottom right, var(--color-gray-90), var(--color-gray-70));
+}
+
+// Replace the logo
+h1 a {
+	/* background-image: url("assets/images/logo.png") !important; */
+}
+
+.login #nav {
+	text-align: center;
+}
+
+.login #nav a {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.login #nav a:hover {
+	color: white;
+}
+
+.login form {
+	box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 4px 1px 32px rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+}
+
+.login #backtoblog a {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 700;
+	font-size: 14px !important;
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+}
+
+#backtoblog a:hover {
+	color: white !important;
+}

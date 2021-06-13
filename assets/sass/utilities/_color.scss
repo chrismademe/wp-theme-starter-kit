@@ -1,0 +1,11 @@
+@each $token, $value in token('color') {
+	.c-#{$token},
+	.has-#{$token}-color {
+		color: #{$value};
+	}
+
+	.bg-#{$token},
+	.has-#{$token}-background-color {
+		background-color: #{$value};
+	}
+}

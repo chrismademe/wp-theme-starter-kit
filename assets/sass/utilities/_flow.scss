@@ -1,0 +1,14 @@
+/** Flow Utility **/
+.flow > * {
+	--flow-space: var(--space-4, 1em);
+}
+
+.flow > * + * {
+	margin-top: var(--flow-space);
+}
+
+@each $token, $value in token('space') {
+	.flow-space-#{$token} > * {
+		--flow-space: #{$value};
+	}
+}

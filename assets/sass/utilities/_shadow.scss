@@ -1,0 +1,5 @@
+@each $token, $value in token('shadow') {
+	.shadow-#{$token} {
+		box-shadow: #{$value};
+	}
+}

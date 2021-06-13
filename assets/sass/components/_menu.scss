@@ -1,0 +1,18 @@
+$showMenuAt: 900px !default;
+
+.menu {
+	display: none;
+
+	@media (min-width: $showMenuAt) {
+		display: block;
+	}
+}
+
+.menu__link {
+	color: var(--menu-link-color, var(--color-gray-70));
+	text-decoration: none;
+
+	&:hover {
+		--menu-link-color: var(--menu-link-color-hover, var(--color-gray-90));
+	}
+}

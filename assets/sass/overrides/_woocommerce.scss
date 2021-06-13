@@ -1,0 +1,40 @@
+.shop-cart__item,
+.shop-cart__item .product-thumbnail {
+	position: relative;
+}
+
+.shop-cart__item .product-thumbnail .bubble {
+	position: absolute;
+	top: -0.6rem;
+	right: -0.6rem;
+}
+
+.shop-cart__item .product-remove {
+	margin-top: 0; // Remove flow-space
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	.remove {
+		color: var(--color-negative);
+		font-size: var(--size-xl);
+		display: block;
+	}
+}
+
+/* Quantity Input */
+input.qty {
+	width: auto;
+}
+
+/* Coupon Box */
+.coupon {
+	border: var(--shop-coupon-box-border, 1px solid var(--color-gray-10));
+	border-radius: var(--shop-coupon-box-border-radius, var(--radius-base));
+	padding: var(--shop-coupon-box-padding, var(--space-4) var(--space-6));
+}
+
+/* Cart Totals */
+.cart_totals .button {
+	width: 100%;
+}

@@ -1,0 +1,64 @@
+/**
+ * Alignment Utilities
+ *
+ * These utilities are meant to be used with Grid or Flex properties
+ */
+.items-start {
+	align-items: start;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.items-end {
+	align-items: flex-end;
+}
+
+.justify-start {
+	justify-content: start;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+@each $breakpoint, $value in token('breakpoints') {
+	@media (min-width: $value) {
+		.#{$breakpoint}\:items-start {
+			align-items: start;
+		}
+
+		.#{$breakpoint}\:items-center {
+			align-items: center;
+		}
+
+		.#{$breakpoint}\:items-end {
+			align-items: flex-end;
+		}
+
+		.#{$breakpoint}\:justify-start {
+			justify-content: start;
+		}
+
+		.#{$breakpoint}\:justify-center {
+			justify-content: center;
+		}
+
+		.#{$breakpoint}\:justify-between {
+			justify-content: space-between;
+		}
+
+		.#{$breakpoint}\:justify-end {
+			justify-content: flex-end;
+		}
+	}
+}

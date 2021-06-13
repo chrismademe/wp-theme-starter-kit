@@ -1,0 +1,66 @@
+.block-area,
+.block-editor-block-list__layout.is-root-container {
+	--gutter: var(--space-8, 2rem);
+	--columns: var(--gutter) calc(var(--gutter) / 2) 1fr calc(var(--gutter) / 2) var(--gutter);
+
+	display: grid;
+	grid-template-columns: var(--columns);
+	row-gap: var(--row-gap, var(--space-10));
+
+	> * {
+		grid-column: 2 / span 3;
+	}
+
+	> h1 + p,
+	> h2 + p,
+	> h3 + p,
+	> h4 + p,
+	> h5 + p,
+	> h6 + p {
+		--row-gap: var(--space-3);
+	}
+
+	> p + p,
+	> p + ul,
+	> ul + p,
+	> ul + ul,
+	> p + ol,
+	> ol + p,
+	> ol + ol {
+		--row-gap: var(--space-4);
+	}
+
+	> .alignfull {
+		grid-column: 1 / -1;
+	}
+
+	@media (min-width: 460px) {
+		> .alignwide,
+		> .woocommerce {
+			grid-column: 2 / span 3;
+		}
+	}
+
+	@media (min-width: 768px) {
+		--content-width: 640px;
+		--columns: var(--gutter) 1fr var(--content-width) 1fr var(--gutter);
+
+		> * {
+			grid-column: 3;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		--content-width: 720px;
+		--columns: var(--gutter) 1fr 1fr var(--content-width) 1fr 1fr var(--gutter);
+
+		> * {
+			grid-column: 4;
+		}
+
+		> .alignwide,
+		> .woocommerce {
+			grid-column: 3 / span 3;
+		}
+	}
+}

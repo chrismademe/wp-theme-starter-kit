@@ -1,0 +1,252 @@
+:root {
+	@each $category, $values in $tokens {
+		@each $token, $value in $values {
+			--#{$category}-#{$token}: #{$value};
+		}
+	}
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--color-white, white);
+	color: var(--color-primary, black);
+	font-family: var(--font-base, sans-serif);
+	font-size: var(--size-base);
+	text-rendering: optimizeSpeed;
+	margin: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	line-height: var(--leading-base, 1.5);
+	margin: 0;
+}
+
+a {
+	color: var(--color-neutral, blue);
+	position: relative;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img {
+	/* Only render images when they're in the viewport */
+	content-visibility: auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+picture {
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+button {
+	appearance: none;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
+}
+
+[disabled] {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+ul.list {
+	list-style: initial;
+}
+
+ul.list li {
+	margin-left: var(--space-8, 2em);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	letter-spacing: var(--tracking-tight, -0.5px);
+	line-height: var(--leading-tight, 1.1);
+	font-weight: var(--weight-bold, 700);
+	margin: 0;
+}
+
+h1,
+.h1 {
+	font-size: var(--size-3xl);
+}
+
+h2,
+.h2 {
+	font-size: var(--size-2xl);
+}
+
+h3,
+.h3 {
+	font-size: var(--size-xl);
+}
+
+h4,
+.h4 {
+	font-size: var(--size-lg);
+}
+
+@supports (display: grid) {
+	.browser-message {
+		display: none;
+	}
+}
+
+.email-address {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important; /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important; /* 3 */
+}
+
+/*
+	Use in conjunction with .sr-only to only display content when it's focused.
+	@note Useful for skip links
+	@see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
+	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
+		@author Sylvain Pigeard
+		@see https://github.com/twbs/bootstrap/issues/20732
+*/
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+	clip-path: none !important;
+	height: auto !important;
+	margin: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
+}
+
+.skip-link {
+	background: var(--skip-link-background-color, var(--color-neutral));
+	color: var(--skip-link-color, white);
+	box-shadow: var(--shadow-2xl);
+	left: var(--space-8);
+	padding: var(--space-3) var(--space-6);
+	position: absolute;
+	transform: translateY(-150%);
+	transition: transform 0.3s;
+}
+
+.skip-link:focus {
+	transform: translateY(0%);
+}
+
+/* Cookie Consent styles */
+cookie-consent-banner button {
+	box-shadow: var(--shadow-xl);
+	color: white;
+	font-weight: var(--weight-bold, 700);
+}
+
+/* Edit Page Button */
+.edit-page {
+	border-radius: 9999px;
+	width: var(--space-12);
+	height: var(--space-12);
+	position: fixed;
+	bottom: var(--space-4);
+	right: var(--space-4);
+	transition: opacity 150ms ease-in-out;
+	opacity: 0;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
